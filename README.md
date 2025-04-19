@@ -23,6 +23,7 @@ Welcome to the **DevOps Master Journey** – a hands-on, project-based guide to 
 ### 🛠️ Tools
 - [tools/git-setup.md](tools/git-setup.md) → Complete Git & GitHub setup guide (WSL-friendly)
 - [tools/jenkins-setup.md](tools/jenkins-setup.md) → Jenkins + Docker + GitHub CI/CD pipeline setup
+- [tools/jenkins-pipeline.md](tools/jenkins-pipeline.md) → Full Jenkins CI/CD pipeline for Flask app (Freestyle Job)
 
 ### 💼 Projects
 - End-to-end real-world DevOps projects with CI/CD pipelines, Docker, Flask apps, monitoring tools, and infra automation.
@@ -44,6 +45,7 @@ Welcome to the **DevOps Master Journey** – a hands-on, project-based guide to 
 ## ✅ Current Progress
 - ✅ Git + GitHub setup completed
 - ✅ Jenkins + Docker + CI/CD pipeline functional
+- ✅ Jenkins Freestyle Job documented with Flask app deployment
 - 🏗️ Next: Docker Compose + Monitoring Tools
 
 ---
@@ -63,5 +65,7 @@ Want to follow the journey?
 - LinkedIn, Hashnode coming soon...
 
 Let's build like real DevOps engineers 💪
+
+
 
 
