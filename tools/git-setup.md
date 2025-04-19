@@ -17,25 +17,31 @@ git config --global --list
 
 ## ✅ Step 2: Setup Personal Access Token (PAT)
 
-To avoid entering your GitHub username and password every time, use:
+To avoid entering your GitHub username and password every time:
 
 ```bash
 git config --global credential.helper store
+```
 
 Then:
 
-Go to: https://github.com/settings/tokens
-Click "Generate new token (classic)"
-Set repo permission ✅
-Set expiration as needed
-Copy the token immediately
-When doing git push, Git will ask for:
-Username → your GitHub username
-Password → paste the PAT
+- Go to: https://github.com/settings/tokens  
+- Click **"Generate new token (classic)"**  
+- Set **repo** permission ✅  
+- Set expiration as needed  
+- **Copy the token immediately**
 
-Git will save the token in:
+When pushing for the first time:
 
+- **Username** → your GitHub username  
+- **Password** → paste the PAT (Personal Access Token)
+
+The token will be saved in:
+
+```bash
 ~/.git-credentials
+```
+
 
 
 ## ✅ Step 3: Create Folder Structure
