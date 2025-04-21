@@ -47,6 +47,7 @@ Welcome to the **DevOps Master Journey** – a hands-on, project-based guide to 
 - ✅ Jenkins + Docker + CI/CD pipeline functional
 - ✅ Jenkins Freestyle Job documented with Flask app deployment
 - ✅ Docker Compose integration with Jenkins + Flask completed
+- ✅ GitHub Webhook + Declarative Pipeline (Jenkinsfile) added and verified
 - 🏗️ Next: Docker Compose Monitoring Tools (Prometheus + Grafana)
 
 ---
