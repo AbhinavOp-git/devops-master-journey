@@ -1,6 +1,6 @@
-# 🔁 DevOps Day 3 – Jenkins Webhook + CI/CD Pipeline Setup (Step-by-Step)
+# 🔁 Jenkins Webhook + CI/CD Pipeline Setup (Step-by-Step)
 
-This log documents the exact steps taken on Day 3 of the DevOps 20-Day Mastery Plan — including ngrok setup, Jenkins container setup, GitHub webhook integration, writing a Jenkinsfile, resolving real errors, and confirming successful pipeline execution.
+This log documents the exact steps taken in carrying out ngrok setup, Jenkins container setup, GitHub webhook integration, writing a Jenkinsfile, resolving real errors, and confirming successful pipeline execution.
 
 ---
 
