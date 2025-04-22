@@ -24,6 +24,8 @@ Welcome to the **DevOps Master Journey** – a hands-on, project-based guide to 
 - [`tools/jenkins-setup.md`](tools/jenkins-setup.md) → Jenkins + Docker + GitHub CI/CD pipeline setup
 - [`tools/jenkins-pipeline.md`](tools/jenkins-pipeline.md) → Full Jenkins CI/CD pipeline for Flask app (Freestyle Job)
 - [`tools/docker-compose-jenkins-flask.md`](tools/docker-compose-jenkins-flask.md) → CI/CD pipeline using Docker Compose for Jenkins + Flask app
+- [`tools/docker-compose-jenkins-flask-prometheus-grafana.md`](tools/docker-compose-jenkins-flask-prometheus-grafana.md) → Complete monitoring setup 
+using Prometheus + Grafana with Jenkins & Flask
 
 ### 💼 Projects
 - End-to-end real-world DevOps projects with CI/CD pipelines, Docker, Flask apps, monitoring tools, and infrastructure automation.
@@ -48,7 +50,10 @@ Welcome to the **DevOps Master Journey** – a hands-on, project-based guide to 
 - ✅ Jenkins Freestyle Job documented with Flask app deployment
 - ✅ Docker Compose integration with Jenkins + Flask completed
 - ✅ GitHub Webhook + Declarative Pipeline (Jenkinsfile) added and verified
-- 🏗️ Next: Docker Compose Monitoring Tools (Prometheus + Grafana)
+- ✅ Docker Compose Monitoring Stack (Jenkins + Flask + Prometheus + Grafana) configured and verified
+- 🔜 Next: Linux + Bash Mastery (Scripting & Automation)
+
+
 
 ---
 
