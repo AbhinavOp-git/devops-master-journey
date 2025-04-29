@@ -145,9 +145,14 @@ docker-compose up -d --build flask-app
 ---
 
 ### ❌ Prometheus showing `jenkins:8080` as DOWN (HTTP 404)
-**Why:** By default, Prometheus tries to scrape `/metrics`, but Jenkins exposes metrics at `/prometheus`.
+**Why:** Jenkins requires a plugin for exposing Prometheus metrics and authentication blocks unauthenticated scraping.
 
-**Fix:** Update `prometheus.yml` job like this:
+**Fix**:
+- Go to Jenkins → Manage Jenkins → Plugin Manager → Install **Prometheus Metrics Plugin**
+- Then navigate to **Manage Jenkins → Configure Global Security**
+  - Disable CSRF or allow anonymous read for metrics (as needed)
+
+Also ensure prometheus.yml:
 ```yaml
 - job_name: 'jenkins'
   metrics_path: '/prometheus'
