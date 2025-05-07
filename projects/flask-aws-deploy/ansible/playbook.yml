@@ -1,0 +1,31 @@
+---
+- name: Setup Flask App on EC2 using Docker
+  hosts: web
+  become: yes
+
+  tasks:
+    - name: Update packages
+      apt:
+        update_cache: yes
+
+    - name: Install Docker
+      apt:
+        name: docker.io
+        state: present
+
+    - name: Enable and start Docker
+      service:
+        name: docker
+        state: started
+        enabled: true
+
+    - name: Copy Flask app
+      copy:
+        src: files/app.py
+        dest: /home/ec2-user/app.py
+        owner: ec2-user
+        group: ec2-user
+
+    - name: Run Flask app inside Docker
+      shell: |
+        docker run -d -p 5000:5000 python:3 bash -c "pip install flask && python /home/ec2-user/app.py"
