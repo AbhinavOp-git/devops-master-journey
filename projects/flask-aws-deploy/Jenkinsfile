@@ -1,0 +1,19 @@
+pipeline {
+  agent any
+  stages {
+    stage('Clone Repo') {
+      steps {
+        git 'https://github.com/AbhinavOp-git/devops-master-journey.git'
+      }
+    }
+    stage('Deploy to EC2') {
+      steps {
+        sh '''
+          ssh -o StrictHostKeyChecking=no ec2-user@65.0.5.147 '
+          docker run -d -p 5000:5000 -v ~/app.py:/app.py python:3 bash -c "pip install flask && python /app.py"
+          '
+        '''
+      }
+    }
+  }
+}
