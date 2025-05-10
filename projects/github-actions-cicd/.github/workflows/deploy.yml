@@ -21,5 +21,6 @@ jobs:
       run: pip install -r requirements.txt
 
     - name: Run dummy test
-      run:
+      run: |
         echo "✅ Flask app is ready for deployment"
+
