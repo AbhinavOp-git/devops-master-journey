@@ -1,11 +1,11 @@
-name: Flask CI
+name: Flask CI/CD
 
 on:
   push:
     branches: [ main ]
 
 jobs:
-  test:
+  build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
@@ -24,3 +24,16 @@ jobs:
       run: |
         echo "✅ Flask app is ready for deployment"
 
+    - name: Setup SSH Key
+      run: |
+        echo "${{ secrets.EC2_SSH_KEY }}" > key.pem
+        chmod 400 key.pem
+
+    - name: Deploy to EC2 via SSH
+      run: |
+        ssh -o StrictHostKeyChecking=no -i key.pem ec2-user@13.201.168.157 << 'EOF'
+          docker rm -f $(docker ps -aq) || true
+          docker run -d -p 5000:5000 \
+            -v ~/flask-docker-app/app.py:/app.py \
+            python:3 bash -c "pip install flask && python /app.py"
+        EOF
