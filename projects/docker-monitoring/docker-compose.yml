@@ -1,4 +1,4 @@
-version: '3'
+version: '3.8'
 
 services:
   cadvisor:
@@ -27,13 +27,25 @@ services:
     container_name: grafana
     ports:
       - "3000:3000"
+    volumes:
+      - grafana-storage:/var/lib/grafana
+    environment:
+      - GF_SECURITY_ADMIN_USER=admin
+      - GF_SECURITY_ADMIN_PASSWORD=admin
+    depends_on:
+      - loki
+    restart: unless-stopped
 
   loki:
     image: grafana/loki:2.9.3
     container_name: loki
     ports:
       - "3100:3100"
-    command: -config.file=/etc/loki/local-config.yaml
+    command: -config.file=/etc/loki/loki-config.yaml
+    volumes:
+      - ./loki-config/loki-config.yaml:/etc/loki/loki-config.yaml
+      - ./loki-data:/loki
+    user: 10001:10001
     restart: unless-stopped
 
   promtail:
@@ -47,3 +59,6 @@ services:
     depends_on:
       - loki
     restart: unless-stopped
+
+volumes:
+  grafana-storage:
